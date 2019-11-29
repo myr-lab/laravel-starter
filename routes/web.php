@@ -1,5 +1,26 @@
 <?php
 
+
+
+//Admin Route 
+Route::namespace('Admin')->group(function () {
+
+   Route::get('admin','HomeController@index')->name('admin.home');
+   
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 Route::view("/","welcome");
 // Model View Controller
 Route::get("test","TestController@Test");
@@ -25,3 +46,8 @@ Route::get('newsletter',"NewsletterController@show")->name('newsletter');
 Route::post('newsletter',"NewsletterController@store");
 
 //Frontend Route
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
