@@ -23,3 +23,5 @@ Route::post('companies/{id}','CompanyController@delete')->name('company.delete')
 
 Route::get('newsletter',"NewsletterController@show")->name('newsletter');
 Route::post('newsletter',"NewsletterController@store");
+
+//Frontend Route
