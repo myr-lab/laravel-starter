@@ -5,7 +5,8 @@
 //Admin Route 
 Route::namespace('Admin')->group(function () {
 
-   Route::get('admin','HomeController@index')->name('admin.home');
+   Route::get('backend','HomeController@index')->name('admin.home');
+   Route::resource('backend/category','CategoryController');
    
 });
 

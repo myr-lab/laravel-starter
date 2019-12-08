@@ -8,6 +8,8 @@
 
   <title>Admin Panel</title>
   <link rel="stylesheet" href="{{asset('css/app.css')}}">
+  @section('datatable-css')
+  @show
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -20,17 +22,12 @@
 
   
   <div class="content-wrapper">
-    <div class="content">
-      <div class="container-fluid">
-        <div class="row">
+    <div class="content">    
         
         @section('content')
 
         @show
 
-
-        </div>
-      </div>
     </div>
   </div>
 
@@ -42,5 +39,7 @@
 
 
 <script src="{{asset('js/app.js')}}"></script>
+@section('datatable-js')
+@show
 </body>
 </html>
