@@ -18,15 +18,15 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->text('body');
-            $table->integer('user_id');
-            $table->integer('category_id');
+            $table->unsignedInteger('user_id')->nullable();
+            $table->unsignedInteger('category_id');
             $table->boolean('isActive');
-            $table->integer('view_count');
-            $table->integer('love');
+            $table->integer('view_count')->default(0);
+            $table->integer('love')->nullable();
             $table->timestamps();
 
-            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            // $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 

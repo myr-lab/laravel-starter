@@ -27,7 +27,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link active">
+                <a href="{{ route('post.index') }}" class="nav-link active">
                   <i class="fa fa-edit"></i>
                   <p>Article List</p>
                 </a>

@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="{{asset('css/app.css')}}">
   @section('datatable-css')
   @show
+
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -40,6 +41,8 @@
 
 <script src="{{asset('js/app.js')}}"></script>
 @section('datatable-js')
+@show
+@section('ckeditor')
 @show
 </body>
 </html>
