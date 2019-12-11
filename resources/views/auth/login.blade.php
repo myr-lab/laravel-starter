@@ -6,6 +6,8 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
+       
+@include('backend.error.error')
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

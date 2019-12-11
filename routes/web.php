@@ -12,17 +12,13 @@ Route::namespace('Admin')->group(function () {
 
    //Post Route
    Route::resource('backend/post','PostController');
+
+   //Login
+   Route::get('backend/login', 'Auth\LoginController@showLoginForm')->name('admin.login');
+   Route::post('backend/login', 'Auth\LoginController@login')->name('admin.login');
+   Route::post('backend/logout', 'Auth\LoginController@logout')->name('admin.logout');
    
 });
-
-
-
-
-
-
-
-
-
 
 
 

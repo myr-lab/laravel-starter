@@ -8,7 +8,7 @@
           <img src="https://codechief.org/user/img/mahedi.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">John Doe</a>
+          <a href="#" class="d-block">{{ auth()->user()->name }}</a>
         </div>
       </div>
 
@@ -82,6 +82,19 @@
                   <p>Add User</p>
                 </a>
               </li>
+
+            <li class="nav-item">
+                  <a class="dropdown-item" href="{{ route('admin.logout') }}"
+                     onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                      {{ __('Logout') }}
+                  </a>
+
+                  <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+                      @csrf
+                  </form>
+              </li>
+
             </ul>
           </li>
 
