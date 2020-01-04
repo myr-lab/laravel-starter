@@ -2,38 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use App\Newsletter;
+use App\Model\User\Newsletter;
 use Illuminate\Http\Request;
-use App\Http\Validation\NewsletterValidation;
 use App\Mail\NewsletterMail;
 
 class NewsletterController extends Controller
 {  
 
-   use NewsletterValidation;
-    
-   public function show()
-   {
-   	  return view('frontend.news.index');
-   }
-   
     public function store(Request $request)
    {
-   	
-   	   $this->newsletterFormValidation($request->all());
-       
-       $email = $request->email;
-       $username = strstr($email, '@', true);
 
-       \Mail::to($request->email)->send(new NewsletterMail($username));
+       // $username = strstr($request->email, '@', true);
 
-   	   Newsletter::create($request->all());
+       // \Mail::to($request->email)->send(new NewsletterMail($username));
+
+   	   Newsletter::create([
+          'email' => $request->email
+       ]);
       
-       \Session::flash('message','Thanks for joinig');
-       //return request()->input('email');
-
-       return redirect(route('newsletter'));
-
+      return response()->json([
+     
+        'ouremail' => $request->email,
+        'message' => 'Thanks for subscribing'
+       
+      ]);
    }
 
 }

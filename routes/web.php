@@ -44,12 +44,19 @@ Route::patch('companies/{id}','CompanyController@submitFormData')->name('company
 //Delete Company
 Route::post('companies/{id}','CompanyController@delete')->name('company.delete');
 
-Route::get('newsletter',"NewsletterController@show")->name('newsletter');
-Route::post('newsletter',"NewsletterController@store");
+
+//Newsletter
+Route::post('newsletter',"NewsletterController@store")->name('newsletter');
 
 //Frontend Route
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/signup', 'SignupController@showRegistrationForm')->name('signup');
+Route::post('/signup', 'SignupController@handleRegistration');
+Route::get('/verify/{token}', 'VerifyController@VerifyEmail')->name('verify');
+Route::get('/signin', 'LoginController@ShowLoginForm')->name('signin');
+Route::post('/signin', 'LoginController@HandleLogin');
 

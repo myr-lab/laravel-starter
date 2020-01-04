@@ -20,7 +20,10 @@
             <a class="nav-link" href="{{URL::to('contact')}}">Contact</a>
           </li>
            <li class="nav-item">
-            <a class="nav-link {{Request::is('/newsletter') ? 'active' : ''}}" href="{{ route('newsletter') }}">Newsletter</a>
+            <a href="" data-toggle="modal" data-target="#newsletter" class="nav-link">Newsletter</a>
+          </li>
+           <li class="nav-item">
+            <a href="{{ route('signup') }}" class="nav-link">Register</a>
           </li>
         </ul>
       </div>
